@@ -3,6 +3,7 @@ import SmallAuthorListItem from "./components/author/SmallAuthorListItem";
 import { LargeBookListItem } from "./components/books/LargeBooksListItem";
 import { SmallBookListItem } from "./components/books/SmallBooksListItem";
 import { RegularList } from "./components/lists/Regular";
+import { Modal } from "./components/Modal";
 import { SplitScreen } from "./components/split-screen";
 import { authors } from "./data/authors";
 import { books } from "./data/books";
@@ -22,12 +23,12 @@ function App() {
         <LeftSideComp title={"Left"} />
         <RightSideComp title={"Right"} />
       </SplitScreen>
-      <RegularList
+      {/* <RegularList
         items={authors}
         sourceName={"author"}
         ItemComponent={SmallAuthorListItem}
-      />
-      <RegularList
+      /> */}
+      {/* <RegularList
         items={authors}
         sourceName={"author"}
         ItemComponent={LargeAuthorListItem}
@@ -42,7 +43,11 @@ function App() {
         items={books}
         sourceName={"book"}
         ItemComponent={LargeBookListItem}
-      />
+      /> */}
+
+      <Modal>
+        <LargeBookListItem book={books[0]} />
+      </Modal>
     </>
   );
 }
